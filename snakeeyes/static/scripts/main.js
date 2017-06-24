@@ -184,7 +184,7 @@ var stripe = function (form_id) {
   };
 
   var protectAgainstInvalidCoupon = function (coupon, couponStatus) {
-    if (couponStatus.is(':visible') && 
+    if (couponStatus.is(':visible') &&
         !couponStatus.hasClass('alert-success')) {
       coupon.select();
       return false;
@@ -309,10 +309,10 @@ var bets = function () {
       $userCoins.text(coinsLeft + parsed_data.net);
 
       if (parsed_data.is_winner) {
-        status_class = '<i class="fa fa-fw fa-smile-o"></i> Congrats, you won!';
+        status_class = '<i class="fa fa-fw fa-smile-o"></i> Congrats!! You WON!';
         bet_class = 'success';
       } else {
-        status_class = '<i class="fa fa-fw fa-frown-o"></i> You lost, try again!';
+        status_class = '<i class="fa fa-fw fa-frown-o"></i> You lost. Try again!';
         bet_class = 'danger';
       }
 
@@ -339,12 +339,12 @@ var bets = function () {
       return $outcomeStatus.addClass('alert alert-info alert-small').html(status_class);
     }).fail(function (xhr, status, error) {
       var status_class = 'alert-error';
-      var error_status = 'You are out of coins. You should buy more.';
+      var error_status = 'You are out of coins. Get more TODAY before the price increase.';
 
       if (xhr.responseJSON) {
         error_status = xhr.responseJSON.error;
       } else if (error == 'TOO MANY REQUESTS') {
-        error_status = 'You have been temporarily rate limited.';
+        error_status = 'Oops! You have been temporarily rate limited.';
       }
 
       return $outcomeStatus.addClass(status_class).text(error_status);
@@ -380,4 +380,3 @@ $(document).ready(function() {
   stripe('#payment_form');
   bets();
 });
-
