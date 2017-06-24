@@ -5,6 +5,7 @@ from flask import (
     flash,
     url_for,
     render_template)
+
 from flask_login import login_required, current_user
 from sqlalchemy import text
 
@@ -25,7 +26,6 @@ from snakeeyes.blueprints.admin.forms import (
 
 admin = Blueprint('admin', __name__,
                   template_folder='templates', url_prefix='/admin')
-
 
 @admin.before_request
 @login_required

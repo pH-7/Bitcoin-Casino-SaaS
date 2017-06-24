@@ -84,11 +84,11 @@ var coupons = function () {
   var durationSelector = '#duration';
   var durationInMonths = '#duration-in-months';
   var redeemBy = '#redeem_by';
-  
+
   var $duration = $(durationSelector);
   var $durationInMonths = $(durationInMonths);
   var $redeemBy = $(redeemBy);
-  
+
   $('body').on('change', durationSelector, function () {
     if ($duration.val() === 'repeating') {
       $durationInMonths.show();
@@ -288,7 +288,7 @@ var bets = function () {
   var $outcomeStatus = $('#outcome');
   var $spinner = $('.spinner');
   var $form = $('#place_bet');
-  
+
   var placeBet = function (csrfToken) {
     return $.ajax({
       type: 'POST',
