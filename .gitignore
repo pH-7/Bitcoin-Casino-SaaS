@@ -1,0 +1,39 @@
+.DS_Store
+.env
+.flaskenv
+*.pyc
+*.pyo
+env
+env*
+dist
+build
+*.egg
+*.egg-info
+_mailinglist
+.tox
+.cache/
+.idea/
+
+# Coverage reports
+htmlcov
+.coverage
+.coverage.*
+*,cover
+
+
+## OS ##
+
+# Linux
+*~
+*.swp
+# KDE
+.directory
+
+# Windows
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Mac OS
+.DS_Store*
+._*
